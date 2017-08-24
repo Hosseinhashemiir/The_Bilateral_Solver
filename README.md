@@ -96,6 +96,11 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_CUDA=OFF ..
 make -j
 sudo make install
 ```
+#notic :
+if you have build failure with this error : unsupported/Eigen/MatrixFunctions: No such file or directory
+You have to find the path of unsupported/Eigen/MatrixFunctions. In my case it was inside /usr/include/eigen3/.
+Then to solve the problem you have to open modules/contrib/src/rgbdodometry.cpp and add "eigen3/" to the include path at line 65.
+
 
 ###Build The_Bilateral_Solver
 ```
